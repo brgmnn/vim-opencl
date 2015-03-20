@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:     OpenCL (Open Computing Language)
 " Maintainer:   Daniel Bergmann
-" Last Change:  10-March-2015
+" Last Change:  20-March-2015
 
 if version < 600
     syntax clear
@@ -29,13 +29,13 @@ syn keyword clStorage
 "-----------------------------------------------------------------------------
 " Scalar data types
 syn keyword clType
-    \ bool char uchar short ushort int uint long ulong
-    \ float double half quad
-    \ size_t void ptrdiff_t intptr_t uintptr_t
+    \ uchar short ushort uint ulong
+    \ half quad
+    \ size_t ptrdiff_t intptr_t uintptr_t
 
 " Vector data types
 syn match clType display
-    \ "\(char\|int\|long\|short\|uchar\|uint\|ulong\|ushort\|double\|float\)\(2\|3\|4\|8\|16\)"
+    \ "\(char\|int\|long\|short\|uchar\|uint\|ulong\|ushort\|double\|float\)\(2\|3\|4\|8\|16\)\="
 
 " Other data types
 syn keyword clType
@@ -211,11 +211,13 @@ syn match clFloat display "\.\d\+\(e[-+]\=\d\+\)\=[fl]\=\>"
 syn match clFloat display "\d\+e[-+]\=\d\+[fl]\=\>"
 
 
+
 "       Highlight definition links
 "-----------------------------------------------------------------------------
 hi def link clStorage   StorageClass
 hi def link clStructure Structure
 hi def link clType      Type
+hi def link clNormal    Normal
 hi def link clVariable  Identifier
 hi def link clConstant  Constant
 hi def link clCast      Operator
