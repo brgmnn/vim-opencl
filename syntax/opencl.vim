@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:     OpenCL (Open Computing Language)
 " Maintainer:   Daniel Bergmann
-" Last Change:  20-March-2015
+" Last Change:  24-March-2015
 
 if version < 600
     syntax clear
@@ -35,7 +35,7 @@ syn keyword clType
 
 " Vector data types
 syn match clType display
-    \ "\(char\|int\|long\|short\|uchar\|uint\|ulong\|ushort\|double\|float\)\(2\|3\|4\|8\|16\)\="
+    \ "[^a-zA-Z0-9_()]\(char\|int\|long\|short\|uchar\|uint\|ulong\|ushort\|double\|float\)\(2\|3\|4\|8\|16\)\=[^a-zA-Z0-9_()]"
 
 " Other data types
 syn keyword clType
